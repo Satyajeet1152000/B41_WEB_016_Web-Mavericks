@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bbr {
+    border: 2px solid red;
+}
+
+.bbb {
+    border: 2px solid blue;
+}
