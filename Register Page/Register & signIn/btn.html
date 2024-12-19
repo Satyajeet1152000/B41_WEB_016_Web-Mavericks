@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register and sign-in Button</title>
+    <style>
+        #register-btn,#sign-in-btn{
+            padding:10px 15px;
+            font-weight:bold;
+            color:rgb(9, 9, 255);
+            background-color: white;
+            border:none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Register Button Created -->
+    <button id="register-btn">Register</button>
+
+    <!-- Sign in button created -->
+    <button id="sign-in-btn">Sign in</button>
+
+    <script>
+        // catch the register button
+        const btn=document.getElementById("register-btn");
+              btn.addEventListener("click" , function(){
+          
+                window.location.href="register.html" //register page will open
+              })
+        const signinBtn=document.getElementById("sign-in-btn")
+              signinBtn.addEventListener("click", function() {
+          
+            window.location.href ="signin/signin.html"; // sign in page will open
+        });
+    </script>
+</body>
+</html>
