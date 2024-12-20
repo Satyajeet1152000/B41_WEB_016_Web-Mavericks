@@ -18,6 +18,31 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     </head>
     <body>
+        <div
+            class="absolute w-full h-full backdrop-filter bg-black backdrop-blur-md bg-opacity-50 z-50 text-white text-xl font-semibold justify-center items-center flex-col hidden"
+            id="mobile-menu"
+        >
+            <div class="flex flex-col gap-5">
+                <button class="absolute top-5 right-5 text-3xl" id="close-menu">
+                    <i class="ri-close-line"></i>
+                </button>
+                <button
+                    class="bg-white text-[#003b95] px-3 py-1 rounded-md border-2 border-[#749edd]"
+                >
+                    List Your Property
+                </button>
+                <button
+                    class="bg-white text-[#003b95] px-3 py-1 rounded-md border-2 border-[#749edd]"
+                >
+                    Register
+                </button>
+                <button
+                    class="bg-white text-[#003b95] px-3 py-1 rounded-md border-2 border-[#749edd]"
+                >
+                    Sign in
+                </button>
+            </div>
+        </div>
         <header
             class="bg-[#003b95] px-2 md:px-20 lg:px-32 xl:px-40 2xl:px-60 text-nowrap py-2"
         >
@@ -32,18 +57,19 @@
 
                     <!-- mobile nav -->
                     <div
-                        class="flex lg:hidden items-center justify-center text-white font-extralight text-3xl"
+                        class="flex xl:hidden items-center justify-center text-white font-extralight text-3xl"
                     >
                         <button class="w-16 h-16 hover:bg-white/10 rounded-lg">
                             <i class="ri-account-circle-line"></i>
                         </button>
-                        <button>
+                        <button id="menu">
                             <i class="ri-menu-line"></i>
                         </button>
                     </div>
+
                     <!-- desktop -->
                     <div
-                        class="hidden lg:flex items-center justify-center text-white text-xl gap-2 font-semibold"
+                        class="hidden xl:flex items-center justify-center text-white text-xl gap-2 font-semibold"
                     >
                         <button class="w-16 h-16 hover:bg-white/10 rounded-lg">
                             INR
@@ -173,6 +199,7 @@
         </main>
 
         <script type="module" src="./Scripts/index.js"></script>
+        <script type="module" src="./Scripts/mobileNav.js"></script>
         <!-- <script type="module" src="temp.js"></script> -->
     </body>
 </html>
