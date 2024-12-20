@@ -32,11 +32,13 @@ export default function ImageCarasoulGenerator(
 
     new Swiper(`#${containerId} .swiper`, {
         direction: "horizontal",
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 10,
         slidesPerGroup: 1,
+        centeredSlidesBounds: true,
         loop: false,
         loopFillGroupWithBlank: true,
+        width: null,
         navigation: {
             nextEl: ".swiper-btn-next",
             prevEl: ".swiper-btn-prev",

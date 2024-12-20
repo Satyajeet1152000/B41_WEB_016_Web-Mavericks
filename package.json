@@ -1,5 +1,9 @@
 {
-  "devDependencies": {
-    "tailwindcss": "^3.4.17"
-  }
+    "type": "module",
+    "devDependencies": {
+        "tailwindcss": "^3.4.17"
+    },
+    "dependencies": {
+        "pexels": "^1.4.0"
+    }
 }

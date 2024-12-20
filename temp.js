@@ -1,24 +1,29 @@
-const carousel = document.getElementById("carousel");
-const prevButton = document.getElementById("prev");
-const nextButton = document.getElementById("next");
+// const apiKey = "J8nEhRfDwLiFrOfynHTuRufSthaHjwmKMx4imzPPFNbqhuYqMfgW7Qto";
 
-let currentIndex = 0;
+// const query = "banglore";
 
-function updateCarousel() {
-    const offset = -currentIndex * 100; // Adjust carousel position
-    carousel.style.transform = `translateX(${offset}%)`;
-}
+// fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=10`, {
+//     headers: {
+//         Authorization: apiKey,
+//     },
+// })
+//     .then((response) => response.json())
+//     .then((data) => {
+//         console.log(data.photos);
+//     })
+//     .catch((error) => console.error(error));
 
-prevButton.addEventListener("click", () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-    }
-});
+// const apiKey = "AIzaSyC2Fcr7dtGi7sA37aP_-OhkdIEqtNe1OVc";
 
-nextButton.addEventListener("click", () => {
-    if (currentIndex < carousel.children.length - 1) {
-        currentIndex++;
-        updateCarousel();
-    }
-});
+// const cx = "967b2cf5c30ba48e5";
+// const query = "banglore hotels";
+
+// fetch(
+//     `https://www.googleapis.com/customsearch/v1?q=${query}&cx=${cx}&key=${apiKey}&searchType=image&num=10`
+//     // `https://www.googleapis.com/customsearch/v1?q=${query}&cx=${cx}&key=${apiKey}`
+// )
+//     .then((response) => response.json())
+//     .then((data) => {
+//         console.log(data.items); // Array of image search results
+//     })
+//     .catch((error) => console.error(error));
