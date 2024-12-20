@@ -18,7 +18,151 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     </head>
     <body>
-        <main class="px-10 md:px-20 lg:px-32 xl:px-40 2xl:px-80">
+        <header
+            class="bg-[#003b95] px-2 md:px-20 lg:px-32 xl:px-40 2xl:px-60 text-nowrap py-2"
+        >
+            <nav class="space-y-5">
+                <!-- top -->
+                <div class="flex justify-between items-center">
+                    <img
+                        src="./logo.svg"
+                        alt="logo"
+                        class="w-52 md:w-60 lg:w-72 xl:w-80"
+                    />
+
+                    <!-- mobile nav -->
+                    <div
+                        class="flex lg:hidden items-center justify-center text-white font-extralight text-3xl"
+                    >
+                        <button class="w-16 h-16 hover:bg-white/10 rounded-lg">
+                            <i class="ri-account-circle-line"></i>
+                        </button>
+                        <button>
+                            <i class="ri-menu-line"></i>
+                        </button>
+                    </div>
+                    <!-- desktop -->
+                    <div
+                        class="hidden lg:flex items-center justify-center text-white text-xl gap-2 font-semibold"
+                    >
+                        <button class="w-16 h-16 hover:bg-white/10 rounded-lg">
+                            INR
+                        </button>
+                        <button
+                            class="w-16 h-16 hover:bg-white/10 rounded-lg p-3"
+                        >
+                            <img
+                                src="https://t-cf.bstatic.com/design-assets/assets/v3.138.1/images-flags/In@3x.png"
+                                alt=""
+                                class="rounded-full"
+                            />
+                        </button>
+                        <button class="w-16 h-16 hover:bg-white/10 rounded-lg">
+                            <i class="ri-question-line"></i>
+                        </button>
+                        <button
+                            class="h-16 px-2 hover:bg-white/10 rounded-lg text-nowrap"
+                        >
+                            List Your Property
+                        </button>
+                        <button
+                            class="bg-white text-[#003b95] px-3 py-1 rounded-md border-2 border-[#749edd]"
+                        >
+                            Register
+                        </button>
+                        <button
+                            class="bg-white text-[#003b95] px-3 py-1 rounded-md border-2 border-[#749edd]"
+                        >
+                            Sign in
+                        </button>
+                    </div>
+                </div>
+
+                <!-- bottom -->
+                <div
+                    class="text-white flex gap-5 items-center text-xl flex-wrap"
+                >
+                    <button
+                        class="bg-white/10 px-3 py-1 border-2 border-white rounded-full"
+                    >
+                        <i class="ri-hotel-bed-line"></i> Stays
+                    </button>
+                    <button class="hover:bg-white/10 px-3 py-1 rounded-full">
+                        <i class="ri-flight-takeoff-fill"></i> Flights
+                    </button>
+                    <button class="hover:bg-white/10 px-3 py-1 rounded-full">
+                        <i class="ri-briefcase-2-line"></i> Fifht+Hotel
+                    </button>
+                    <button class="hover:bg-white/10 px-3 py-1 rounded-full">
+                        <i class="ri-car-line"></i> Car Rentals
+                    </button>
+                    <button class="hover:bg-white/10 px-3 py-1 rounded-full">
+                        <i class="ri-landscape-ai-line"></i> Attractions
+                    </button>
+                    <button class="hover:bg-white/10 px-3 py-1 rounded-full">
+                        <i class="ri-taxi-line"></i> Airport taxis
+                    </button>
+                </div>
+            </nav>
+
+            <!-- heading -->
+            <div class="text-white space-y-2 my-10 mb-20">
+                <h1 class="text-5xl font-bold">Find your next stay</h1>
+                <p class="text-2xl">
+                    Search low prices on hotels, homes and much more...
+                </p>
+            </div>
+        </header>
+
+        <main class="px-2 md:px-20 lg:px-32 xl:px-40 2xl:px-60 space-y-12">
+            <!-- search form-->
+            <div
+                class="p-1 rounded-lg flex flex-col xl:flex-row bg-yellow-500 items-center gap-2 text-xl -mt-10"
+            >
+                <div
+                    class="bg-white h-16 w-full rounded-lg px-2 overflow-hidden flex items-center gap-2"
+                >
+                    <label for="" class="text-gray-400 text-2xl"
+                        ><i class="ri-hotel-bed-line"></i
+                    ></label>
+                    <input
+                        type="text"
+                        class="placeholder:text-black h-full w-full focus:outline-none focus:placeholder:text-gray-400"
+                        placeholder="Where are you going?"
+                    />
+                </div>
+                <div
+                    class="bg-white h-16 w-full rounded-lg px-2 overflow-hidden flex items-center gap-2"
+                >
+                    <label for="" class="text-gray-400 text-2xl"
+                        ><i class="ri-calendar-2-line"></i
+                    ></label>
+                    <input
+                        type="text"
+                        class="placeholder:text-black h-full w-full xl:w-fit focus:outline-none focus:placeholder:text-gray-400"
+                        disabled
+                        placeholder="Fri-20 Dec - Sat 28 Dec"
+                    />
+                </div>
+                <div
+                    class="bg-white h-16 w-full rounded-lg px-2 overflow-hidden flex items-center gap-2"
+                >
+                    <label for="" class="text-gray-400 text-2xl"
+                        ><i class="ri-user-line"></i
+                    ></label>
+                    <input
+                        type="text"
+                        class="placeholder:text-black h-full w-full focus:outline-none focus:placeholder:text-gray-400"
+                        disabled
+                        placeholder="2 adults . 0 childeren . 1 room"
+                    />
+                </div>
+                <button
+                    class="bg-[#0057b8] h-16 w-full xl:w-fit px-5 text-white font-semibold rounded-lg"
+                >
+                    Search
+                </button>
+            </div>
             <div id="offers"></div>
             <div id="explore-india"></div>
             <div id="property-banglore"></div>
