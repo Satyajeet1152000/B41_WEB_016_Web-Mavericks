@@ -1,3 +1,27 @@
+export const OffersData = [
+    {
+        imgSrc: "https://r-xx.bstatic.com/xdata/images/xphoto/500x500/184698944.png?k=6bb1bf3c13db4a7ba3c22a2d1f1051f793c525a78104703b4dec3eb12101f545&o=",
+        title: "Fly away to your dream holiday",
+        description:
+            "Get inspired, compare and book flights with more flexibility",
+        btnText: "Search for flights",
+    },
+    {
+        imgSrc: "https://r-xx.bstatic.com/xdata/images/xphoto/500x500/372051085.jpeg?k=f5182852fa2c998e2b47cfd922da41ae16c42beb02fb70ecb57ee55ced3271f6&o=",
+        title: "Go for a good time, not a long time",
+        description:
+            "Finish your year with a mini break. Save 15% or more when you book and stay by 7 January 2025. ",
+        btnText: "Find Late Escape Deals",
+    },
+    {
+        imgSrc: "https://q-xx.bstatic.com/xdata/images/xphoto/500x500/420460173.jpeg?k=0654940492bab9993284109d6136f220e700bbb4d5a0a972c4b4de3bdc0d8204&o=",
+        title: "Save on stays worldwide",
+        description:
+            "Start your year with a sense of adventure, saving 15% or more with Early 2025 Deals.",
+        btnText: "Save 15% or more",
+    },
+];
+
 export const exploreIndiaData = [
     {
         imgSrc: "https://q-xx.bstatic.com/xdata/images/city/2000x2000/684534.jpg?k=d1fe86c22f2433f4e2dda14ddcbe80feb024b0fb30305e5684a1241fba5d4cff&o=",
@@ -135,5 +159,244 @@ export const browsePropertyBangloreData = [
         types: "Farm Stays",
         info: "20 Dec-21 Dec, 2 adults",
         availablity: "5",
+    },
+];
+
+export const TrendingDestinationsData = [
+    {
+        cityName: "New Delhi",
+        imgSrc: "https://cf.bstatic.com/xdata/images/city/2000x2000/684765.jpg?k=3f7d20034c13ac7686520ac1ccf1621337a1e59860abfd9cbd96f8d66b4fc138&o=",
+    },
+    {
+        cityName: "Bangalore",
+        imgSrc: "https://cf.bstatic.com/xdata/images/city/2000x2000/684534.jpg?k=d1fe86c22f2433f4e2dda14ddcbe80feb024b0fb30305e5684a1241fba5d4cff&o=",
+    },
+    {
+        cityName: "Mumbai",
+        imgSrc: "https://cf.bstatic.com/xdata/images/city/2000x2000/684730.jpg?k=e37b93d88c1fe12e827f10c9d6909a1def7349be2c68df5de885deaa4bc01ee3&o=",
+    },
+    {
+        cityName: "Chennai",
+        imgSrc: "https://cf.bstatic.com/xdata/images/city/2000x2000/684653.jpg?k=306ccafcc8a4a7e23b9e8a05b183453fe885b312a4daa5ce76ec39a1b79cbc6f&o=",
+    },
+    {
+        cityName: "Hyderabad",
+        imgSrc: "https://cf.bstatic.com/xdata/images/city/2000x2000/971346.jpg?k=40eeb583a755f2835f4dcb6900cdeba2a46dc9d50e64f2aa04206f5f6fce5671&o=",
+    },
+];
+
+export const QuickAndEasyTripPlannerData = [
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/xphoto/300x240/140018305.jpg?k=e65be1a66c483f1e67604884f62a78c9e338e73e052287edf17aa9a50166b6db&o=",
+        city: "Daman",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/xphoto/300x240/140018132.jpg?k=ad7ddebea85f63605bac11598b10513979566db10686cfb25bb2493ad18f3816&o=",
+        city: "Visakhapatnam",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/xphoto/300x240/140018192.jpg?k=f6e8398d4cbb7ea834bb5f0b6b0a2ae285e87edfb51cd0e38e2f813c3015b4d0&o=",
+        city: "Puri",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/xphoto/300x240/140018232.jpg?k=50884e9d87f49e83187be934dc300c1157b78774cdd7c8abeffca013b01f4e6a&o=",
+        city: "Malvan",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/xphoto/300x240/140018352.jpg?k=357c43ce88f013731c1c293b3bd8b3a2f41388481e1f7614b0af357edf838c67&o=",
+        city: "Arambol",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/xphoto/300x240/140018227.jpg?k=65616f26b5dd96602e5d345969f1b0e63b33eb842a639f7afa9a912bb2db2a65&o=",
+        city: "Mandrem",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/xphoto/300x240/140018219.jpg?k=8245599b888d741f853b57797bd73064df95dd2efea9729de2d4c1fbb858295e&o=",
+        city: "Morjim",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/xphoto/300x240/140018290.jpg?k=de384bd0b8e742d6da7b04affefc9973657e68856254d9fe2d8fa136556e180b&o=",
+        city: "Old Goa",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/xphoto/300x240/140051825.jpg?k=772aadabab15d477749dbbcae285265c6204fd9bcdaabc1a959269adc67d09c1&o=",
+        city: "Vagator",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/xphoto/300x240/140018353.jpg?k=143675af2b9d47a041e3b8b92fe9e2d28a3b9cf60e4efd4502cb0e251c0eb5df&o=",
+        city: "Anjuna",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/xphoto/300x240/140018351.jpg?k=c1330a382706548c5b4054e9e77eea1dfa405cfefb9b6cbcb409583012e4150d&o=",
+        city: "Arpora",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/xphoto/300x240/140051643.jpg?k=f6f530767a7a11bc8367e5c430bdae74cbd1c6eca4bdc71abad9a9e933c4dc92&o=",
+        city: "Baga",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/xphoto/300x240/140018311.jpg?k=6e7dee4903e875959a64287572a8bc0b09e35bb735f06fa97f94dd90fcad9220&o=",
+        city: "Calangute",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/xphoto/300x240/140018202.jpg?k=824d3077b043eb5203e872cccb6bb96ce2e5c50ddbb32cb647416914a71283ec&o=",
+        city: "Panaji",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/xphoto/300x240/140018327.jpg?k=b9ca20182e90091411ce7fa638bdf9a9aa5024f3a0fe49808705e1f481bc589b&o=",
+        city: "Candolim",
+    },
+];
+
+export const DealsOfWeekendData = [
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square240/620122118.jpg?k=f4a2d6258ae553b814f19226c5b325dc1055e97bb90c28c264135d9185ef9cce&o=",
+        title: "Airport president near delhi igi airport",
+        location: "New Delhi, India",
+        rating: "8.1",
+        reviews: "20",
+        actualPrice: "4856",
+        discountedPrice: "2914",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square240/480772038.jpg?k=0984a2a8c11e9372a267c06b576dce97a74215c4bbcecf30aaeed8866aa91f3c&o=",
+        title: "FabHotel Royal International - Nr Mumbai International Airport",
+        location: "Mumbai, India",
+        rating: "7.3",
+        reviews: "576",
+        actualPrice: "10719",
+        discountedPrice: "5253",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square240/617634761.jpg?k=3a55f97040590d82d2db0948d4d7359878045a16987786a8371dd5386ebf7757&o=",
+        title: "Hotel Grand Udaipur- Rooftop Cafe! swimming pool!",
+        location: "Udaipur, India",
+        rating: "10",
+        reviews: "6",
+        actualPrice: "16000",
+        discountedPrice: "9795",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square240/618826931.jpg?k=143ddbb9fb28906abac2034e498a928cbfa4c89dea00ba4c67ef65df6ebb03fd&o=",
+        title: "Luxury Villa A Family Hotel Near IGI Airport",
+        location: "New Delhi, India",
+        rating: "8",
+        reviews: "150",
+        actualPrice: "2995",
+        discountedPrice: "2645",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square240/533708472.jpg?k=bacaaddc4d3b8ff3bdec7814f7999335f0fc437c087e74ddcd2bef20a4c8a7c7&o=",
+        title: "Ginger Mumbai Airport",
+        location: "Mumbai, India",
+        rating: "7.5",
+        reviews: "793",
+        actualPrice: "13450",
+        discountedPrice: "12148",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square240/522509956.jpg?k=f30ac45477379dcd9f04fa6b61bc1c9782fa8d974abbfd7e9d1d9294269873a9&o=",
+        title: "Hotel Grand Bhagwat, Udaipur",
+        location: "Udaipur, India",
+        rating: "7.4",
+        reviews: "183",
+        actualPrice: "16000",
+        discountedPrice: "9457",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square240/522509956.jpg?k=f30ac45477379dcd9f04fa6b61bc1c9782fa8d974abbfd7e9d1d9294269873a9&o=",
+        title: "Udai Nature Valley Resort by AN Hotels-A Peacefull river Retreat",
+        location: "Udaipur, India",
+        rating: "7",
+        reviews: "56",
+        actualPrice: "19990",
+        discountedPrice: "11199",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square240/607869762.jpg?k=4f8660b82c4483c5ae2757b3988d41fce3ed56e33b7178499aa5be04f4a325aa&o=",
+        title: "Hotel Silky IGI Airport Delhi",
+        location: "New Delhi, India",
+        rating: "9.6",
+        reviews: "41",
+        actualPrice: "2590",
+        discountedPrice: "1949",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square240/613383384.jpg?k=b6f864c57b90b888c842c740d87ab7bd182f0f08e17268183580a8fe450ee0b7&o=",
+        title: "Hotel Silky IGI Airport Delhi",
+        location: "Delhi, India",
+        rating: "9.6",
+        reviews: "41",
+        actualPrice: "2590",
+        discountedPrice: "1949",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square240/479488404.jpg?k=62fa91410ddafa77cced0ed3c8f7f14fb798616662c0706393f0d678e98e7aa4&o=",
+        title: "FabExpress Orange Suites - Nr Mumbai International Airport",
+        location: "Mumbai, India",
+        rating: "7",
+        reviews: "263",
+        actualPrice: "8118",
+        discountedPrice: "3978",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square240/522509956.jpg?k=f30ac45477379dcd9f04fa6b61bc1c9782fa8d974abbfd7e9d1d9294269873a9&o=",
+        title: "Udai Nature Valley Resort by AN Hotels-A Peacefull river Retreat",
+        location: "Udaipur, India",
+        rating: "7",
+        reviews: "56",
+        actualPrice: "19990",
+        discountedPrice: "11199",
+    },
+];
+
+export const TopUniquePropertiesData = [
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square600/626663383.webp?k=f6b6e914dca4fe00ff302a4057386700408a0b90614727e56a254aeb52b97fc1&o=",
+        title: "Aloft New Delhi Aerocity",
+        location: "Aerocity, India, New Delhi",
+        rating: "8.4",
+        reviews: "3855",
+        price: "69500",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square600/34213277.webp?k=bcc447ce78b5822966ed767cc840fb45e1ef6c1707a17669b8759db5aec624bd&o=",
+        title: "The Leela Palace Chennai",
+        location: "South Chennai, India, Chennai",
+        rating: "8.8",
+        reviews: "2349",
+        price: "91630",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square600/31400560.webp?k=912eb80a1f482e60ba5dc2bc769b84d2ce47e7faa93e2b3f1414ca42be62db23&o=",
+        title: "The Oberoi Gurgaon",
+        location: "Udyog Vihar, India, Gurgaon",
+        rating: "9.4",
+        reviews: "678",
+        price: "142000",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square600/530741607.webp?k=a02676c2618683eec9b2188a57447499e7887d978368f774cde40a406a5b5d8e&o=",
+        title: "Heritage Village Resort & Spa Goa",
+        location: "India, Cansaulim",
+        rating: "8.6",
+        reviews: "744",
+        price: "131393",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square600/170109421.webp?k=45939f7b70642905ad301668b56e49fee2074e75a6885e392776d0244365bae5&o=",
+        title: "The Grand Dragon Ladakh",
+        location: "India, Leh",
+        rating: "9.4",
+        reviews: "168",
+        price: "70380",
+    },
+    {
+        imgSrc: "https://cf.bstatic.com/xdata/images/hotel/square600/31448417.webp?k=6d328bde1877209395b5650830b14cea8661d3c228738830584d9382c9c18c94&o=",
+        title: "The Oberoi Rajvilas Jaipur",
+        location: "India, Jaipur",
+        rating: "9.5",
+        reviews: "252",
+        price: "767000",
     },
 ];
