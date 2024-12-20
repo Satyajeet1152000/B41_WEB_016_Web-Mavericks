@@ -24,3 +24,16 @@ TrendingDestinations("trending-destination", TrendingDestinationsData);
 QuickAndEasyTripPlanner("quick-and-easy", QuickAndEasyTripPlannerData);
 DealsOfWeekend("deals-of-weekends", DealsOfWeekendData);
 TopUniqueProperties("top-uniqie-property", TopUniquePropertiesData);
+
+document.querySelectorAll("#register-btn").forEach((b) => {
+    console.log("register-btn");
+    b.addEventListener("click", function () {
+        window.location.href = "register.html";
+    });
+});
+
+document.querySelectorAll("#sign-in-btn").forEach((b) => {
+    b.addEventListener("click", function () {
+        window.location.href = "signin.html";
+    });
+});
