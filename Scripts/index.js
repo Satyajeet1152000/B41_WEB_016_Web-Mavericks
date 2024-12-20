@@ -17,7 +17,7 @@ function Offers(containerId, data) {
         <div class="swiper-slide">
             <div class="flex p-4 border border-gray-400 rounded-md">
                 <div class="space-y-5">
-                    <h3 class="font-bold text-xl text-nowrap">${d.title}</h3>
+                    <h3 class="font-bold text-xl">${d.title}</h3>
                     <p class="text-gray-500 ">${d.description} properties</p>            
                     <div class="bg-blue-600 text-white w-fit px-4 py-3 font-bold rounded-lg">${d.btnText}</div>
                 </div>

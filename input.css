@@ -9,3 +9,7 @@
 .bbb {
     border: 2px solid blue;
 }
+
+.swiper-slide {
+    height: auto;
+}
