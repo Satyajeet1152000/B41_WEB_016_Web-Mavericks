@@ -9,12 +9,12 @@ export function Offers(containerId, data) {
         <div class="swiper-slide">
             <div class="flex p-4 border border-gray-400 rounded-md">
                 <div class="space-y-5">
-                    <h3 class="font-bold text-xl">${d.title}</h3>
-                    <p class="text-gray-500 ">${d.description} properties</p>            
-                    <div class="bg-blue-600 text-white w-fit px-4 py-3 font-bold rounded-lg">${d.btnText}</div>
+                    <h3 class="font-bold text-xl">${d[1].title}</h3>
+                    <p class="text-gray-500 ">${d[1].description} properties</p>            
+                    <div class="bg-blue-600 text-white w-fit px-4 py-3 font-bold rounded-lg">${d[1].btnText}</div>
                 </div>
                 <img
-                    src=${d.imgSrc}
+                    src=${d[1].imgSrc}
                     alt=""
                     class="w-32 h-32 rounded-lg object-cover p-3 "
                 />
@@ -48,12 +48,12 @@ export function ExploreIndiaImageCarasoul(containerId, data) {
         cardHtmlData += `
         <div class="swiper-slide">
             <img
-                src=${d.imgSrc}
-                alt=${d.location}
+                src=${d[1].imgSrc}
+                alt=${d[1].location}
                  class="w-60 h-48 rounded-lg object-cover"
             />
-            <h3 class="font-bold text-xl">${d.location}</h3>
-            <p class="text-gray-500">${d.properties} properties</p>
+            <h3 class="font-bold text-xl">${d[1].location}</h3>
+            <p class="text-gray-500">${d[1].properties} properties</p>
         </div>
         `;
     });
@@ -76,13 +76,13 @@ export function BangalorePropertyImageCarasoul(containerId, data) {
         cardHtmlData += `
         <div class="swiper-slide">
             <img
-                src=${d.imgSrc}
-                alt=${d.location}
+                src=${d[1].imgSrc}
+                alt=${d[1].location}
                  class="w-80 h-80 rounded-lg object-cover"
             />
-            <h3 class="font-bold text-xl">${d.types}</h3>
-            <p class="text-gray-500">${d.info}</p>
-            <p class="text-gray-500">${d.availablity} available</p>
+            <h3 class="font-bold text-xl">${d[1].types}</h3>
+            <p class="text-gray-500">${d[1].info}</p>
+            <p class="text-gray-500">${d[1].availablity} available</p>
         </div>
         `;
     });
@@ -117,10 +117,10 @@ export function TrendingDestinations(containerId, data) {
 
         cardHtmlData += `
           <div class="${flexClasses} relative">
-            <h3 class="font-bold text-xl absolute text-white top-5 left-3 bg-black/50 px-2 rounded-md">${d.cityName}</h3>
+            <h3 class="font-bold text-xl absolute text-white top-5 left-3 bg-black/50 px-2 rounded-md">${d[1].cityName}</h3>
             <img
-              src="${d.imgSrc}"
-              alt="${d.cityName}"
+              src="${d[1].imgSrc}"
+              alt="${d[1].cityName}"
               class="w-full h-80 rounded-lg object-cover"
             />
           </div>
@@ -154,11 +154,11 @@ export function QuickAndEasyTripPlanner(containerId, data) {
         cardHtmlData += `
         <div class="swiper-slide">
             <img
-                src=${d.imgSrc}
-                alt=${d.city}
+                src=${d[1].imgSrc}
+                alt=${d[1].city}
                  class="w-60 h-48 rounded-lg object-cover"
             />
-            <h3 class="font-bold text-xl">${d.city}</h3>
+            <h3 class="font-bold text-xl">${d[1].city}</h3>
         </div>
         `;
     });
@@ -181,27 +181,27 @@ export function DealsOfWeekend(containerId, data) {
         cardHtmlData += `
         <div class="swiper-slide">
             <img
-                src=${d.imgSrc}
-                alt=${d.location}
+                src=${d[1].imgSrc}
+                alt=${d[1].location}
                  class="w-60 h-48 rounded-lg object-cover"
             />
             <div class="flex flex-col gap-2 w-60">
                 <h3 class="font-bold text-xl truncate-2 line-clamp-2">${
-                    d.title
+                    d[1].title
                 }</h3>
-                <p class="text-gray-500">${d.location}</p>
+                <p class="text-gray-500">${d[1].location}</p>
                 <div class= "flex gap-2 items-center">
                     <div class="text-xl text-white bg-blue-700 w-8 h-8 text-center rounded-md rounded-">${
-                        d.rating
+                        d[1].rating
                     }</div>
-                    <p class="text-gray-500">${d.reviews} reviews</p>
+                    <p class="text-gray-500">${d[1].reviews} reviews</p>
                 </div>
                 
                 <div class="flex gap-2 items-center justify-end text-xl">
                     <div class="text-red-700 stroke-current line-through"> ${price(
-                        d.discountedPrice
+                        d[1].discountedPrice
                     )}</div>
-                    <div class="font-bold">${price(d.actualPrice)}</div>
+                    <div class="font-bold">${price(d[1].actualPrice)}</div>
                 </div>            
             </div>
         </div>
@@ -233,25 +233,25 @@ export function TopUniqueProperties(containerId, data) {
         cardHtmlData += `
         <div class="swiper-slide">
             <img
-                src=${d.imgSrc}
-                alt=${d.location}
+                src=${d[1].imgSrc}
+                alt=${d[1].location}
                  class="w-60 h-48 rounded-lg object-cover"
             />
             <div class="flex flex-col gap-2 w-60 justify-between">
                 <h3 class="font-bold text-xl truncate-2 line-clamp-2">${
-                    d.title
+                    d[1].title
                 }</h3>
-                <p class="text-gray-500">${d.location}</p>
+                <p class="text-gray-500">${d[1].location}</p>
                 <div class= "flex gap-2 items-center">
                     <div class="text-xl text-white bg-blue-700 w-8 h-8 text-center rounded-md rounded-">${
-                        d.rating
+                        d[1].rating
                     }</div>
-                    <p class="text-gray-500">${d.reviews} reviews</p>
+                    <p class="text-gray-500">${d[1].reviews} reviews</p>
                 </div>
                 
                 <div class="flex gap-2 items-center justify-end">
                     <p class="text-gray-500">Starting from <span class="text-xl font-bold text-black">${price(
-                        d.price
+                        d[1].price
                     )}</span></p>  
                 </div>            
             </div>

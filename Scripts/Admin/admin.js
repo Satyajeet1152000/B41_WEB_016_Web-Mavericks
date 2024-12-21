@@ -33,7 +33,7 @@ tabButtons.forEach((button) => {
 
 async function loadSectionData(section) {
     try {
-        currentData = Object.entries(await getDatabaseData(section));
+        currentData = await getDatabaseData(section);
         renderTable(section, currentData);
     } catch (error) {
         console.error("Failed to fetch data:", error);
