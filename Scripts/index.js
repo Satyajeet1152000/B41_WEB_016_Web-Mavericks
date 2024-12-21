@@ -1,12 +1,4 @@
-import {
-    browsePropertyBangloreData,
-    DealsOfWeekendData,
-    exploreIndiaData,
-    OffersData,
-    QuickAndEasyTripPlannerData,
-    TopUniquePropertiesData,
-    TrendingDestinationsData,
-} from "./data.js";
+import { getDatabaseData } from "./API/get.js";
 import {
     BangalorePropertyImageCarasoul,
     DealsOfWeekend,
@@ -17,13 +9,33 @@ import {
     TrendingDestinations,
 } from "./mainSection.js";
 
-Offers("offers", OffersData);
-ExploreIndiaImageCarasoul("explore-india", exploreIndiaData);
-BangalorePropertyImageCarasoul("property-banglore", browsePropertyBangloreData);
-TrendingDestinations("trending-destination", TrendingDestinationsData);
-QuickAndEasyTripPlanner("quick-and-easy", QuickAndEasyTripPlannerData);
-DealsOfWeekend("deals-of-weekends", DealsOfWeekendData);
-TopUniqueProperties("top-uniqie-property", TopUniquePropertiesData);
+(async () => {
+    Offers("offers", await getDatabaseData("offers"));
+    ExploreIndiaImageCarasoul(
+        "explore-india",
+        await getDatabaseData("explore")
+    );
+    BangalorePropertyImageCarasoul(
+        "property-banglore",
+        await getDatabaseData("properties")
+    );
+    TrendingDestinations(
+        "trending-destination",
+        await getDatabaseData("trendingDestinations")
+    );
+    QuickAndEasyTripPlanner(
+        "quick-and-easy",
+        await getDatabaseData("quickAndEasyTrip")
+    );
+    DealsOfWeekend(
+        "deals-of-weekends",
+        await getDatabaseData("dealsOfWeekend")
+    );
+    TopUniqueProperties(
+        "top-uniqie-property",
+        await getDatabaseData("topUniqueProperties")
+    );
+})();
 
 document.querySelectorAll("#register-btn").forEach((b) => {
     console.log("register-btn");

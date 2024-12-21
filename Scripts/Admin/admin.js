@@ -1,43 +1,26 @@
 import activeBtnController from "../activeButtonController.js";
-import {
-    browsePropertyBangloreData,
-    DealsOfWeekendData,
-    exploreIndiaData,
-    OffersData,
-    QuickAndEasyTripPlannerData,
-    TopUniquePropertiesData,
-    TrendingDestinationsData,
-} from "../data.js";
-
-window.apiBaseUrl = "https://your-api-base-url.com/api"; // Replace with your backend API base URL
+import { deleteDatabaseData } from "../API/delete.js";
+import { getDatabaseData } from "../API/get.js";
 
 const contentContainer = document.getElementById("content-container");
-const tabButtons = document.querySelectorAll(".tab-btn");
 let currentSection = null;
 let currentData = [];
 
+const tabButtonsContainer = document.getElementById("tab-buttons-container");
+
+const sectionsData = window.sectionsData;
+Object.entries(sectionsData).forEach(([section, name]) => {
+    const button = document.createElement("button");
+    button.classList.add("tab-btn", "admin-panel-btn");
+    button.dataset.section = section;
+    button.textContent = name;
+    tabButtonsContainer.appendChild(button);
+});
+
+const tabButtons = document.querySelectorAll(".tab-btn");
+
 const activeBtnCtrl = new activeBtnController(tabButtons);
 activeBtnCtrl.update("offers");
-
-const sections = {
-    offers: "Offers",
-    "explore-india": "Explore India",
-    "bangalore-properties": "Properties",
-    "trending-destinations": "Trending Destinations",
-    "trip-planner": "Quick & Easy Trip ",
-    "deals-weekend": "Deals Of Weekend",
-    "unique-properties": "Unique Properties",
-};
-
-const apiData = {
-    offers: OffersData,
-    "explore-india": exploreIndiaData,
-    "bangalore-properties": browsePropertyBangloreData,
-    "trending-destinations": TrendingDestinationsData,
-    "trip-planner": QuickAndEasyTripPlannerData,
-    "deals-weekend": DealsOfWeekendData,
-    "unique-properties": TopUniquePropertiesData,
-};
 
 tabButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -49,12 +32,8 @@ tabButtons.forEach((button) => {
 });
 
 async function loadSectionData(section) {
-    // const endpoint = `${apiBaseUrl}/${sections[section]}`;
     try {
-        // const response = await fetch(endpoint);
-        // const data = await response.json();
-        currentData = apiData[section];
-
+        currentData = Object.entries(await getDatabaseData(section));
         renderTable(section, currentData);
     } catch (error) {
         console.error("Failed to fetch data:", error);
@@ -65,10 +44,10 @@ loadSectionData("offers");
 
 function renderTable(section, data) {
     let html = `<div class="flex justify-between mb-4">
-                    <h2 class="text-2xl font-bold">${sections[
+                    <h2 class="text-2xl font-bold">${sectionsData[
                         section
                     ].toUpperCase()}</h2>
-                    <button class="bg-green-500 text-white px-4 py-2 rounded" onclick="handleAddNewBtn('create')">Add New</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded" onclick="handleAddNewBtn('${section}')">Add New</button>
                 </div>`;
     if (data.length === 0) {
         html += `<p class="text-center text-gray-600">No data available.</p>`;
@@ -77,7 +56,7 @@ function renderTable(section, data) {
             <table class="table-auto w-full border-collapse border border-gray-300">
                 <thead>
                     <tr class="bg-gray-200">
-                        ${Object.keys(data[0])
+                        ${Object.keys(data[0][1])
                             .map(
                                 (key) =>
                                     `<th class="border border-gray-300 px-4 py-2 w-fit">${key}</th>`
@@ -89,30 +68,35 @@ function renderTable(section, data) {
                 <tbody>
                     ${data
                         .map(
-                            (item, index) => `
-                        <tr>
-                            ${Object.keys(item)
-                                .map(
-                                    (key) =>
-                                        `<td class="border border-gray-300 px-4 py-2">${
-                                            key == "imgSrc"
-                                                ? `<img src=${item[key]} alt="" class="w-24"></img>`
-                                                : item[key]
-                                        }</td>`
-                                )
-                                .join("")}
-                            <td class="border border-gray-300 px-4 py-2 text-center">
-                                <div class="inline-flex space-x-2">
-                                    <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded" onclick="handleEditButton(${index})">
-                                    
-                                        <i class="ri-pencil-line"></i>
-                                    </button>
-                                    <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded" 
-                                    onclick="handleDeleteButton(${index})"><i class="ri-delete-bin-6-line"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        `
+                            (item, index) =>
+                                `
+                                <tr>
+                                    ${Object.keys(item[1])
+                                        .map(
+                                            (key) =>
+                                                `<td class="border border-gray-300 px-4 py-2">${
+                                                    key == "imgSrc"
+                                                        ? `<img src=${item[1][key]} alt="" class="w-24"></img>`
+                                                        : item[1][key]
+                                                }</td>`
+                                        )
+                                        .join("")}
+                                    <td class="border border-gray-300 px-4 py-2 text-center">
+                                        <div class="inline-flex space-x-2">
+                                            <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded" onclick="handleEditButton('${section}', '${
+                                    item[0]
+                                }')">
+
+                                                <i class="ri-pencil-line"></i>
+                                            </button>
+                                            <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
+                                            onclick="handleDeleteButton('${section}', '${
+                                    item[0]
+                                }')"><i class="ri-delete-bin-6-line"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                `
                         )
                         .join("")}
                 </tbody>
@@ -121,18 +105,28 @@ function renderTable(section, data) {
     contentContainer.innerHTML = html;
 }
 
-function handleEditButton(index) {
-    openModal("edit", currentData, index);
+function handleEditButton(section, id) {
+    const dataEntry = currentData.find(([entryId]) => entryId === id);
+    if (dataEntry) {
+        openModal("edit", dataEntry[1], section, id);
+    }
 }
 
-function handleAddNewBtn(type) {
-    // console.log(type);
-    openModal(type, currentData);
+function handleAddNewBtn(section) {
+    openModal("create", currentData[0][1], section);
 }
-function handleDeleteButton(index) {
-    deleteItem(index);
-    // openModal("edit", currentData[index], index);
+
+async function handleDeleteButton(section, id) {
+    if (confirm("Are you sure you want to delete this item?")) {
+        try {
+            await deleteDatabaseData(section, id);
+            loadSectionData(section);
+        } catch (error) {
+            console.error("Failed to delete item:", error);
+        }
+    }
 }
 window.handleAddNewBtn = handleAddNewBtn;
 window.handleEditButton = handleEditButton;
 window.handleDeleteButton = handleDeleteButton;
+window.loadSectionData = loadSectionData;
