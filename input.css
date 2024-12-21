@@ -16,6 +16,6 @@
 
 @layer utilities {
     .admin-panel-btn {
-        @apply hover:bg-blue-600 hover:text-white border-2 border-blue-600 text-blue-600 px-4 py-2 mr-2 rounded-md;
+        @apply hover:bg-blue-600 hover:text-white border-2 border-blue-600  px-4 py-2 mr-2 rounded-md;
     }
 }
