@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* Header Styling */
@@ -12,21 +13,34 @@ header {
     padding: 10px 20px;
 }
 
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 #logo {
     font-size: 24px;
     font-weight: bold;
     color: white;
-}
-
-#navbar {
     display: flex;
-    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
 }
 
-#navbar img {
+#logo img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50px; /* Adjust logo height */
+}
+
+#right-img {
+    display: flex;
+    align-items: center;
+}
+
+#right-img img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -59,7 +73,7 @@ header {
 /* Input Fields Styling (Name, Email, and Password) */
 input[type="text"], input[type="email"], input[type="password"] {
     width: 100%;
-    padding: 12px;  /* Increased padding for more space inside */
+    padding: 12px;
     margin: 0 auto 10px auto;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -75,7 +89,6 @@ input[type="text"], input[type="email"], input[type="password"] {
     margin-bottom: 10px;
     display: block;
 }
-
 
 button#continue-btn {
     width: 100%;
@@ -117,7 +130,7 @@ button#continue-btn:hover {
     max-height: 70%;
 }
 
-
+/* Footer Styling */
 footer {
     text-align: center;
     font-size: 1rem;
@@ -126,7 +139,7 @@ footer {
 }
 
 footer br {
-    display: none; 
+    display: none;
 }
 
 footer span {
