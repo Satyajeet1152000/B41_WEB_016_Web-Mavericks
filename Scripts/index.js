@@ -38,7 +38,6 @@ import {
 })();
 
 document.querySelectorAll("#register-btn").forEach((b) => {
-    console.log("register-btn");
     b.addEventListener("click", function () {
         window.location.href = "register.html";
     });
