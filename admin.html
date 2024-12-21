@@ -16,50 +16,10 @@
             <h1 class="text-2xl font-bold mb-6">Admin Panel</h1>
 
             <!-- Navigation Tabs -->
-            <div class="flex mb-6 font-semibold text-white">
-                <button
-                    class="tab-btn admin-panel-btn admin-panel-btn"
-                    data-section="offers"
-                >
-                    Offers
-                </button>
-                <button
-                    class="tab-btn admin-panel-btn"
-                    data-section="explore-india"
-                >
-                    Explore India
-                </button>
-                <button
-                    class="tab-btn admin-panel-btn"
-                    data-section="bangalore-properties"
-                >
-                    Bangalore Properties
-                </button>
-                <button
-                    class="tab-btn admin-panel-btn"
-                    data-section="trending-destinations"
-                >
-                    Trending Destinations
-                </button>
-                <button
-                    class="tab-btn admin-panel-btn"
-                    data-section="trip-planner"
-                >
-                    Quick Trip Planner
-                </button>
-                <button
-                    class="tab-btn admin-panel-btn"
-                    data-section="deals-weekend"
-                >
-                    Deals of the Weekend
-                </button>
-                <button
-                    class="tab-btn admin-panel-btn"
-                    data-section="unique-properties"
-                >
-                    Top Unique Properties
-                </button>
-            </div>
+            <div
+                class="flex mb-6 font-semibold text-white flex-wrap gap-2"
+                id="tab-buttons-container"
+            ></div>
 
             <!-- Content Container -->
             <div
@@ -96,6 +56,7 @@
                 </div>
             </div>
         </div>
+        <script type="module" src="./Scripts/config.js"></script>
         <script type="module" src="./Scripts/Admin/admin.js"></script>
         <script type="module" src="./Scripts//Components/modal.js"></script>
     </body>

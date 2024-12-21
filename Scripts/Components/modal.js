@@ -1,5 +1,6 @@
-const contentContainer = document.getElementById("content-container");
-const tabButtons = document.querySelectorAll(".tab-btn");
+import { postDatabaseData } from "../API/post.js";
+import { updateDatabaseData } from "../API/put.js";
+
 const modal = document.getElementById("modal");
 const modalTitle = document.getElementById("modal-title");
 const modalForm = document.getElementById("modal-form");
@@ -14,13 +15,12 @@ modal.querySelector("div").addEventListener("click", (e) => {
     e.stopPropagation();
 });
 
-function openModal(action, currentData = null, index) {
+function openModal(action, currentData = null, section, id) {
     modalTitle.textContent = action === "create" ? "Add New Item" : "Edit Item";
     formFields.innerHTML = "";
 
     if (action === "edit") {
-        console.log(index);
-        const item = currentData[index];
+        const item = currentData;
         Object.keys(item).forEach((key) => {
             formFields.innerHTML += `
                 <div>
@@ -29,7 +29,7 @@ function openModal(action, currentData = null, index) {
                 </div>`;
         });
     } else {
-        Object.keys(currentData[0] || {}).forEach((key) => {
+        Object.keys(currentData || {}).forEach((key) => {
             formFields.innerHTML += `
                 <div>
                     <label class="block text-gray-700">${key}</label>
@@ -38,7 +38,7 @@ function openModal(action, currentData = null, index) {
         });
     }
 
-    modalForm.onsubmit = (e) => handleFormSubmit(e, action, index);
+    modalForm.onsubmit = (e) => handleFormSubmit(e, action, section, id);
     modal.classList.remove("hidden");
     modal.classList.add("flex");
 }
@@ -47,42 +47,21 @@ cancelBtn.addEventListener("click", () => {
     modal.classList.add("hidden");
 });
 
-async function handleFormSubmit(e, action, index) {
+async function handleFormSubmit(e, action, section, id) {
     e.preventDefault();
     const formData = Object.fromEntries(new FormData(modalForm));
     try {
         if (action === "create") {
-            await fetch(`${apiBaseUrl}/${sections[currentSection]}`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-            });
+            // return;
+            await postDatabaseData(section, formData);
         } else {
-            await fetch(`${apiBaseUrl}/${sections[currentSection]}/${index}`, {
-                method: "PUT",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-            });
+            await updateDatabaseData(section, id, formData);
         }
         modal.classList.add("hidden");
-        loadSectionData(currentSection);
+        loadSectionData(section);
     } catch (error) {
         console.error("Failed to submit form:", error);
     }
 }
 
-async function deleteItem(index) {
-    if (confirm("Are you sure you want to delete this item?")) {
-        try {
-            await fetch(`${apiBaseUrl}/${sections[currentSection]}/${index}`, {
-                method: "DELETE",
-            });
-            loadSectionData(currentSection);
-        } catch (error) {
-            console.error("Failed to delete item:", error);
-        }
-    }
-}
-
 window.openModal = openModal;
-window.deleteItem = deleteItem;
