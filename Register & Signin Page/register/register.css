@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* Header Styling */
@@ -12,21 +13,33 @@ header {
     padding: 10px 20px;
 }
 
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 #logo {
     font-size: 24px;
     font-weight: bold;
     color: white;
-}
-
-#navbar {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
 }
 
-#navbar img {
+#logo img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50px; /* Adjust logo height */
+}
+
+#right-img {
+    display: flex;
+    align-items: center;
+}
+
+#right-img img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -59,8 +72,8 @@ header {
 /* Input Fields Styling (Name, Email, and Password) */
 input[type="text"], input[type="email"], input[type="password"] {
     width: 100%;
-    padding: 12px;  /* Increased padding for more space inside */
-    margin: 0 auto 10px auto;
+    padding: 12px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
@@ -76,7 +89,7 @@ input[type="text"], input[type="email"], input[type="password"] {
     display: block;
 }
 
-
+/* Continue Button Styling */
 button#continue-btn {
     width: 100%;
     padding: 12px;
@@ -117,7 +130,7 @@ button#continue-btn:hover {
     max-height: 70%;
 }
 
-
+/* Footer Styling */
 footer {
     text-align: center;
     font-size: 1rem;
@@ -126,7 +139,7 @@ footer {
 }
 
 footer br {
-    display: none; 
+    display: none;
 }
 
 footer span {
