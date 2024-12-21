@@ -1,3 +1,4 @@
+import activeBtnController from "../activeButtonController.js";
 import {
     browsePropertyBangloreData,
     DealsOfWeekendData,
@@ -8,19 +9,24 @@ import {
     TrendingDestinationsData,
 } from "../data.js";
 
-const apiBaseUrl = "https://your-api-base-url.com/api"; // Replace with your backend API base URL
+window.apiBaseUrl = "https://your-api-base-url.com/api"; // Replace with your backend API base URL
 
 const contentContainer = document.getElementById("content-container");
 const tabButtons = document.querySelectorAll(".tab-btn");
+let currentSection = null;
+let currentData = [];
+
+const activeBtnCtrl = new activeBtnController(tabButtons);
+activeBtnCtrl.update("offers");
 
 const sections = {
-    offers: "OffersData",
-    "explore-india": "ExploreIndiaData",
-    "bangalore-properties": "BrowsePropertyBangloreData",
-    "trending-destinations": "TrendingDestinationsData",
-    "trip-planner": "TripPlannerData",
-    "deals-weekend": "DealsOfWeekendData",
-    "unique-properties": "TopUniquePropertiesData",
+    offers: "Offers",
+    "explore-india": "Explore India",
+    "bangalore-properties": "Properties",
+    "trending-destinations": "Trending Destinations",
+    "trip-planner": "Quick & Easy Trip ",
+    "deals-weekend": "Deals Of Weekend",
+    "unique-properties": "Unique Properties",
 };
 
 const apiData = {
@@ -33,28 +39,11 @@ const apiData = {
     "unique-properties": TopUniquePropertiesData,
 };
 
-let activeBtn = tabButtons[0]; // Set the first button as active by default
-
-// Initialize the first button with active styles
-activeBtn.className =
-    "hover:bg-blue-600 hover:text-white border-2 border-blue-600 text-blue-600 px-4 py-2 mr-2 rounded-md";
-
 tabButtons.forEach((button) => {
     button.addEventListener("click", () => {
         const section = button.dataset.section;
 
-        // Remove active styles from the previously active button
-        if (activeBtn !== button) {
-            activeBtn.className =
-                "hover:bg-blue-600 hover:text-white border-2 border-blue-600 text-blue-600 px-4 py-2 mr-2 rounded-md";
-        }
-
-        // Set the clicked button as the active button
-        activeBtn = button;
-        activeBtn.className =
-            "hover:bg-blue-600 hover:text-white border-2 border-blue-600 text-blue-600 px-4 py-2 mr-2 rounded-md";
-
-        // Load the section's data
+        activeBtnCtrl.update(section);
         loadSectionData(section);
     });
 });
@@ -64,19 +53,22 @@ async function loadSectionData(section) {
     try {
         // const response = await fetch(endpoint);
         // const data = await response.json();
-        renderTable(section, apiData[section]);
+        currentData = apiData[section];
+
+        renderTable(section, currentData);
     } catch (error) {
         console.error("Failed to fetch data:", error);
         contentContainer.innerHTML = `<p class="text-red-500">Failed to load data.</p>`;
     }
 }
+loadSectionData("offers");
 
 function renderTable(section, data) {
     let html = `<div class="flex justify-between mb-4">
-                    <h2 class="text-2xl font-bold">${section
-                        .replace("-", " ")
-                        .toUpperCase()}</h2>
-                    <button class="bg-green-500 text-white px-4 py-2 rounded" onclick="openModal('create')">Add New</button>
+                    <h2 class="text-2xl font-bold">${sections[
+                        section
+                    ].toUpperCase()}</h2>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded" onclick="handleAddNewBtn('create')">Add New</button>
                 </div>`;
     if (data.length === 0) {
         html += `<p class="text-center text-gray-600">No data available.</p>`;
@@ -109,12 +101,18 @@ function renderTable(section, data) {
                                         }</td>`
                                 )
                                 .join("")}
-                            <td class="border border-gray-300 px-4 py-2 text-center flex">
-                                <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded mr-2" onclick="openModal('edit', ${index})"><i class="ri-pencil-line"></i></button>
-                                <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded" onclick="deleteItem(${index})"><i class="ri-delete-bin-6-line"></i></button>
+                            <td class="border border-gray-300 px-4 py-2 text-center">
+                                <div class="inline-flex space-x-2">
+                                    <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded" onclick="handleEditButton(${index})">
+                                    
+                                        <i class="ri-pencil-line"></i>
+                                    </button>
+                                    <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded" 
+                                    onclick="handleDeleteButton(${index})"><i class="ri-delete-bin-6-line"></i></button>
+                                </div>
                             </td>
                         </tr>
-                    `
+                        `
                         )
                         .join("")}
                 </tbody>
@@ -123,4 +121,18 @@ function renderTable(section, data) {
     contentContainer.innerHTML = html;
 }
 
-renderTable(sections.offers, apiData["offers"]);
+function handleEditButton(index) {
+    openModal("edit", currentData, index);
+}
+
+function handleAddNewBtn(type) {
+    // console.log(type);
+    openModal(type, currentData);
+}
+function handleDeleteButton(index) {
+    deleteItem(index);
+    // openModal("edit", currentData[index], index);
+}
+window.handleAddNewBtn = handleAddNewBtn;
+window.handleEditButton = handleEditButton;
+window.handleDeleteButton = handleDeleteButton;
