@@ -1,8 +1,10 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Header Styling */
 header {
     display: flex;
     justify-content: space-between;
@@ -13,19 +15,12 @@ header {
 
 #navbar {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 100%;
 }
 
-#navbar img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
+/* Logo Styling */
 #logo {
     display: flex;
     align-items: center;
@@ -33,12 +28,25 @@ header {
 }
 
 #logo img {
-    width: 120px;
+    max-width: 165px; /* Adjust logo width */
     height: auto;
     object-fit: contain;
-    margin-top: -10px;
 }
 
+/* Right Side Options Styling */
+#right-img {
+    display: flex;
+    align-items: center;
+}
+
+#right-img img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Sign In Form Styling */
 #signin-form {
     max-width: 400px;
     margin: 20px auto;
@@ -61,6 +69,7 @@ header {
     margin-bottom: 20px;
 }
 
+/* Input Fields Styling */
 input[type="email"], input[type="password"] {
     width: 100%;
     padding: 12px;
@@ -72,6 +81,7 @@ input[type="email"], input[type="password"] {
     box-sizing: border-box;
 }
 
+/* Email Error Styling */
 #email-error {
     color: red;
     font-size: 12px;
@@ -79,6 +89,7 @@ input[type="email"], input[type="password"] {
     display: block;
 }
 
+/* Sign In Button Styling */
 button#signin-btn {
     width: 100%;
     padding: 12px;
@@ -95,6 +106,7 @@ button#signin-btn:hover {
     background-color: #0056b3;
 }
 
+/* Social Media Icons Styling */
 #social-media {
     display: flex;
     justify-content: center;
@@ -118,6 +130,7 @@ button#signin-btn:hover {
     max-height: 70%;
 }
 
+/* Footer Styling */
 footer {
     text-align: center;
     font-size: 1rem;
@@ -126,7 +139,7 @@ footer {
 }
 
 footer br {
-    display: none; 
+    display: none;
 }
 
 footer span {
