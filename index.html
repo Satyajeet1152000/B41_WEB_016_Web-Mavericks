@@ -61,7 +61,10 @@
                     <div
                         class="flex xl:hidden items-center justify-center text-white font-extralight text-3xl"
                     >
-                        <button class="w-16 h-16 hover:bg-white/10 rounded-lg">
+                        <button
+                            class="w-16 h-16 hover:bg-white/10 rounded-lg"
+                            id="user-account"
+                        >
                             <i class="ri-account-circle-line"></i>
                         </button>
                         <button id="menu">
@@ -104,6 +107,12 @@
                             class="bg-white text-[#003b95] px-3 py-1 rounded-md border-2 border-[#749edd]"
                         >
                             Sign in
+                        </button>
+                        <button
+                            class="w-16 h-16 hover:bg-white/10 rounded-lg text-4xl font-extralight hidden"
+                            id="user-account"
+                        >
+                            <i class="ri-account-circle-line"></i>
                         </button>
                     </div>
                 </div>
@@ -201,232 +210,259 @@
             <div id="deals-of-weekends"></div>
             <div id="top-uniqie-property"></div>
         </main>
-<!-- footer code -->
-<footer>
-<div class="container">
-    <h1 style="font-size: 30px;font-weight:bold;margin-bottom:10px;">Popular with Travelers from India</h1>
-    <div class="tabs">
-      <button class="tab-link active" data-tab="domestic">Domestic Cities</button>
-      <button class="tab-link" data-tab="international">International Cities</button>
-      <button class="tab-link" data-tab="regions">Regions</button>
-      <button class="tab-link" data-tab="countries">Countries</button>
-      <button class="tab-link" data-tab="places">Places to Stay</button>
-    </div>
+        <!-- footer code -->
+        <footer>
+            <div class="container">
+                <h1
+                    style="
+                        font-size: 30px;
+                        font-weight: bold;
+                        margin-bottom: 10px;
+                    "
+                >
+                    Popular with Travelers from India
+                </h1>
+                <div class="tabs">
+                    <button class="tab-link active" data-tab="domestic">
+                        Domestic Cities
+                    </button>
+                    <button class="tab-link" data-tab="international">
+                        International Cities
+                    </button>
+                    <button class="tab-link" data-tab="regions">Regions</button>
+                    <button class="tab-link" data-tab="countries">
+                        Countries
+                    </button>
+                    <button class="tab-link" data-tab="places">
+                        Places to Stay
+                    </button>
+                </div>
 
-    <div id="domestic" class="tab-content active">
-      <div class="grid">
-        <div>Srinagar hotels</div>
-        <div>Bangalore hotels</div>
-        <div>Ooty hotels</div>
-        <div>Mumbai hotels</div>
-        <div>Lonavala hotels</div>
-        <div>Jaipur hotels</div>
-        <div>Hyderabad hotels</div>
-        <div>Chennai hotels</div>
-        <div>Puri hotels</div>
-        <div>Pondicherry hotels</div>
-        <div>Rishīkesh hotels</div>
-        <div>Ayodhya hotels</div>
-        <div>Varanasi hotels</div>
-        <div>Pune hotels</div>
-        <div>Varkala hotels</div>
-        <div>Munnar hotels</div>
-        <div>New Delhi hotels</div>
-        <div>Mysore hotels</div>
-        <div>Gurgaon hotels</div>
-        <div>Manāli hotels</div>
-        <div>Kodaikānāl hotels</div>
-        <div>Shimla hotels</div>
-        <div>Cochin hotels</div>
-        <div>Kolkata hotels</div>
-        <div>Mussoorie hotels</div>
-        <div>Udaipur hotels</div>
-        <div>Mahabaleshwar hotels</div>
-        <div>Bīr hotels</div>
-        <div>Tirupati hotels</div>
-        <div>Gokarna hotels</div>
-        <div>Nainital hotels</div>
-        <div>Amritsar hotels</div>
-        <div>Agra hotels</div>
-        <div>Alleppey hotels</div>
-        <div>Ahmedabad hotels</div>
-        <div>Darjeeling hotels</div>
-        <div>Chikmagalūr hotels</div>
-        <div>Hampi hotels</div>
-        <div>Yercaud hotels</div>
-        <div>Ujjain hotels</div>
-        <div>Jaisalmer hotels</div>
-        <div>Tiruvannāmalai hotels</div>
-        <div>Coimbatore hotels</div>
-        <div>Trivandrum hotels</div>
-        <div>Madikeri hotels</div>
-        <div>Alibaug hotels</div>
-        <div>Baga hotels</div>
-        <div>Vrindāvan hotels</div>
-        <div>Haridwār hotels</div>
-        <div>Jodhpur hotels</div>
-        <div>Madurai hotels</div>
-        <div>Kasauli hotels</div>
-        <div>Lucknow hotels</div>
-        <div>Guwahati hotels</div>
-        <div>Shirdi hotels</div>
-        <div>Karjat hotels</div>
-        <div>Kasol hotels</div>
-        <div>Vagamon hotels</div>
-        <div>Dehradun hotels</div>
-        <div>Udupi hotels</div>
-      </div>
-    </div>
+                <div id="domestic" class="tab-content active">
+                    <div class="grid">
+                        <div>Srinagar hotels</div>
+                        <div>Bangalore hotels</div>
+                        <div>Ooty hotels</div>
+                        <div>Mumbai hotels</div>
+                        <div>Lonavala hotels</div>
+                        <div>Jaipur hotels</div>
+                        <div>Hyderabad hotels</div>
+                        <div>Chennai hotels</div>
+                        <div>Puri hotels</div>
+                        <div>Pondicherry hotels</div>
+                        <div>Rishīkesh hotels</div>
+                        <div>Ayodhya hotels</div>
+                        <div>Varanasi hotels</div>
+                        <div>Pune hotels</div>
+                        <div>Varkala hotels</div>
+                        <div>Munnar hotels</div>
+                        <div>New Delhi hotels</div>
+                        <div>Mysore hotels</div>
+                        <div>Gurgaon hotels</div>
+                        <div>Manāli hotels</div>
+                        <div>Kodaikānāl hotels</div>
+                        <div>Shimla hotels</div>
+                        <div>Cochin hotels</div>
+                        <div>Kolkata hotels</div>
+                        <div>Mussoorie hotels</div>
+                        <div>Udaipur hotels</div>
+                        <div>Mahabaleshwar hotels</div>
+                        <div>Bīr hotels</div>
+                        <div>Tirupati hotels</div>
+                        <div>Gokarna hotels</div>
+                        <div>Nainital hotels</div>
+                        <div>Amritsar hotels</div>
+                        <div>Agra hotels</div>
+                        <div>Alleppey hotels</div>
+                        <div>Ahmedabad hotels</div>
+                        <div>Darjeeling hotels</div>
+                        <div>Chikmagalūr hotels</div>
+                        <div>Hampi hotels</div>
+                        <div>Yercaud hotels</div>
+                        <div>Ujjain hotels</div>
+                        <div>Jaisalmer hotels</div>
+                        <div>Tiruvannāmalai hotels</div>
+                        <div>Coimbatore hotels</div>
+                        <div>Trivandrum hotels</div>
+                        <div>Madikeri hotels</div>
+                        <div>Alibaug hotels</div>
+                        <div>Baga hotels</div>
+                        <div>Vrindāvan hotels</div>
+                        <div>Haridwār hotels</div>
+                        <div>Jodhpur hotels</div>
+                        <div>Madurai hotels</div>
+                        <div>Kasauli hotels</div>
+                        <div>Lucknow hotels</div>
+                        <div>Guwahati hotels</div>
+                        <div>Shirdi hotels</div>
+                        <div>Karjat hotels</div>
+                        <div>Kasol hotels</div>
+                        <div>Vagamon hotels</div>
+                        <div>Dehradun hotels</div>
+                        <div>Udupi hotels</div>
+                    </div>
+                </div>
 
-    <div id="international" class="tab-content">
-      <div class="grid">
-        <div>
-        <div>Dubai hotels</div>
-        <div>United Arab Emirates</div>
-        </div>
-        <div> <div>Singapore hotels</div>
-        <div>Singapore</div>
-        </div>
-        <div><div>Paris hotels</div>
-        <div>France</div>
-        </div>
-        <div><div>London hotels</div>
-        <div>United Kingdom</div>
-        </div>
-        <div><div>Bangkok hotels</div>
-        <div>Thailand</div>
-        </div>
-        <div>        
-        <div>New York hotels</div>
-        <div>United States of America</div>
-        </div>
-        <div>
-        <div>Zurich hotels</div>
-        <div>Switzerland</div>
-        </div>
-        <div>
-        <div>Amsterdam hotels</div>
-        <div>Netherlands</div>
-        </div>
-        <div> 
-        <div>Kuala Lumpur hotels</div>
-        <div>Malaysia</div>
-        </div>
-        <div><div>Barcelona hotels</div>
-        <div>Spain</div></div>
-        <div><div>Colombo hotels</div>
-        <div>Sri Lanka</div>
-        </div>
-        <div><div>Tokyo hotels</div>
-        <div>Japan</div>
-        </div>
-        <div><div>Rome hotels</div>
-        <div>Italy</div>
-        </div>
-        <div><div>Toronto hotels</div>
-        <div>Canada</div>
-        </div>
-        <div><div>Seoul hotels</div>
-        <div>South Korea</div>
-        </div>
-        <div> 
-        <div>Hanoi hotels</div>
-        <div>Vietnam</div>
-        </div>
-        <div>
-        <div>Frankfurt hotels</div>
-        <div>Germany</div>
-        </div>
-        <div>
-        <div>Baku hotels</div>
-        <div>Azerbaijan</div>
-        </div>
-        <div>
-        <div>Ho Chi Minh City hotels</div>
-        <div>Vietnam</div>
-        </div>
-        <div>
-        <div>Abu Dhabi hotels</div>
-        <div>United Arab Emirates</div>
-        </div>
-      </div>
-    </div>
+                <div id="international" class="tab-content">
+                    <div class="grid">
+                        <div>
+                            <div>Dubai hotels</div>
+                            <div>United Arab Emirates</div>
+                        </div>
+                        <div>
+                            <div>Singapore hotels</div>
+                            <div>Singapore</div>
+                        </div>
+                        <div>
+                            <div>Paris hotels</div>
+                            <div>France</div>
+                        </div>
+                        <div>
+                            <div>London hotels</div>
+                            <div>United Kingdom</div>
+                        </div>
+                        <div>
+                            <div>Bangkok hotels</div>
+                            <div>Thailand</div>
+                        </div>
+                        <div>
+                            <div>New York hotels</div>
+                            <div>United States of America</div>
+                        </div>
+                        <div>
+                            <div>Zurich hotels</div>
+                            <div>Switzerland</div>
+                        </div>
+                        <div>
+                            <div>Amsterdam hotels</div>
+                            <div>Netherlands</div>
+                        </div>
+                        <div>
+                            <div>Kuala Lumpur hotels</div>
+                            <div>Malaysia</div>
+                        </div>
+                        <div>
+                            <div>Barcelona hotels</div>
+                            <div>Spain</div>
+                        </div>
+                        <div>
+                            <div>Colombo hotels</div>
+                            <div>Sri Lanka</div>
+                        </div>
+                        <div>
+                            <div>Tokyo hotels</div>
+                            <div>Japan</div>
+                        </div>
+                        <div>
+                            <div>Rome hotels</div>
+                            <div>Italy</div>
+                        </div>
+                        <div>
+                            <div>Toronto hotels</div>
+                            <div>Canada</div>
+                        </div>
+                        <div>
+                            <div>Seoul hotels</div>
+                            <div>South Korea</div>
+                        </div>
+                        <div>
+                            <div>Hanoi hotels</div>
+                            <div>Vietnam</div>
+                        </div>
+                        <div>
+                            <div>Frankfurt hotels</div>
+                            <div>Germany</div>
+                        </div>
+                        <div>
+                            <div>Baku hotels</div>
+                            <div>Azerbaijan</div>
+                        </div>
+                        <div>
+                            <div>Ho Chi Minh City hotels</div>
+                            <div>Vietnam</div>
+                        </div>
+                        <div>
+                            <div>Abu Dhabi hotels</div>
+                            <div>United Arab Emirates</div>
+                        </div>
+                    </div>
+                </div>
 
-    <div id="regions" class="tab-content">
-      <div class="grid">
-        <div>Goa</div>
-        <div>Delhi</div>
-        <div>North Goa</div>
-        <div>Coorg</div>
-        <div>Pondicherry</div>
-        <div>South Goa</div>
-        <div>Chandigarh Region</div>
-        <div>Wayanad</div>
-        <div>Delhi NCR</div>
-        <div>Bali</div>
-        <div>Jim Corbett National Park</div>
-        <div>Phuket Province</div>
-        <div>Kabini River</div>
-        <div>Pattaya</div>
-        <div>Ranthambore National Park</div>
-        <div>Leh Ladakh</div>
-        <div>Gurugram Region</div>
-        <div>Jammu & Kashmir</div>
-        <div>Kerala</div>
-        <div>Andaman Islands</div>
-      </div>
-    </div>
+                <div id="regions" class="tab-content">
+                    <div class="grid">
+                        <div>Goa</div>
+                        <div>Delhi</div>
+                        <div>North Goa</div>
+                        <div>Coorg</div>
+                        <div>Pondicherry</div>
+                        <div>South Goa</div>
+                        <div>Chandigarh Region</div>
+                        <div>Wayanad</div>
+                        <div>Delhi NCR</div>
+                        <div>Bali</div>
+                        <div>Jim Corbett National Park</div>
+                        <div>Phuket Province</div>
+                        <div>Kabini River</div>
+                        <div>Pattaya</div>
+                        <div>Ranthambore National Park</div>
+                        <div>Leh Ladakh</div>
+                        <div>Gurugram Region</div>
+                        <div>Jammu & Kashmir</div>
+                        <div>Kerala</div>
+                        <div>Andaman Islands</div>
+                    </div>
+                </div>
 
-    <div id="countries" class="tab-content">
-      <div class="grid">
-        <div>India</div>
-        <div>United States of America</div>
-        <div>United Arab Emirates</div>
-        <div>United Kingdom</div>
-        <div>Thailand</div>
-        <div>France</div>
-        <div>Sri Lanka</div>
-        <div>Germany</div>
-        <div>Italy</div>
-        <div>Switzerland</div>
-        <div>Singapore</div>
-        <div>Canada</div>
-        <div>Vietnam</div>
-        <div>Spain</div>
-        <div>Indonesia</div>
-        <div>Japan</div>
-        <div>Malaysia</div>
-        <div>Netherlands</div>
-        <div>Australia</div>
-        <div>Nepal</div>
-      </div>
-    </div>
+                <div id="countries" class="tab-content">
+                    <div class="grid">
+                        <div>India</div>
+                        <div>United States of America</div>
+                        <div>United Arab Emirates</div>
+                        <div>United Kingdom</div>
+                        <div>Thailand</div>
+                        <div>France</div>
+                        <div>Sri Lanka</div>
+                        <div>Germany</div>
+                        <div>Italy</div>
+                        <div>Switzerland</div>
+                        <div>Singapore</div>
+                        <div>Canada</div>
+                        <div>Vietnam</div>
+                        <div>Spain</div>
+                        <div>Indonesia</div>
+                        <div>Japan</div>
+                        <div>Malaysia</div>
+                        <div>Netherlands</div>
+                        <div>Australia</div>
+                        <div>Nepal</div>
+                    </div>
+                </div>
 
-    <div id="places" class="tab-content">
-      <div class="grid">
-        <div>Resorts</div>
-        <div>Hostels</div>
-        <div>Homestays</div>
-        <div>Cheap hotels</div>
-        <div>Villas</div>
-        <div>5-Star Hotels</div>
-        <div>Beach Hotels</div>
-        <div>Serviced apartments</div>
-        <div>Pet-Friendly Hotels</div>
-        <div>Family Hotels</div>
-        <div>Guest Houses</div>
-        <div>Luxury Hotels</div>
-        <div>3-Star Hotels</div>
-        <div>Apartments</div>
-        <div>4-Star Hotels</div>
-        <div>Cottages</div>
-        <div>Boats</div>
-        <div>Hotels with Pools</div>
-        <div>Luxury Tents</div>
-        <div>Hotels with Parking</div>
-      </div>
-    </div>
-  </div>
+                <div id="places" class="tab-content">
+                    <div class="grid">
+                        <div>Resorts</div>
+                        <div>Hostels</div>
+                        <div>Homestays</div>
+                        <div>Cheap hotels</div>
+                        <div>Villas</div>
+                        <div>5-Star Hotels</div>
+                        <div>Beach Hotels</div>
+                        <div>Serviced apartments</div>
+                        <div>Pet-Friendly Hotels</div>
+                        <div>Family Hotels</div>
+                        <div>Guest Houses</div>
+                        <div>Luxury Hotels</div>
+                        <div>3-Star Hotels</div>
+                        <div>Apartments</div>
+                        <div>4-Star Hotels</div>
+                        <div>Cottages</div>
+                        <div>Boats</div>
+                        <div>Hotels with Pools</div>
+                        <div>Luxury Tents</div>
+                        <div>Hotels with Parking</div>
+                    </div>
+                </div>
+            </div>
 
   <div>
     <div style="font: size 10px ;padding-right:160px ;padding-left: 160px;"> 

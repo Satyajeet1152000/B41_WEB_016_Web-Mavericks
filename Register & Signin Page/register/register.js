@@ -1,29 +1,42 @@
-// Add event listener for the Continue button
-document.getElementById("continue-btn").addEventListener("click", function() {
-    // Getting values from the input fields
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const emailError = document.getElementById("email-error");
+import { createUser } from "../../Scripts/API/post.js";
 
-    if (name && email && password) {
-        // Simple email validation using regex
-        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-        if (emailPattern.test(email)) {
-            // If email is valid, save to localStorage and show success message
-            localStorage.setItem('email', email);  // Store email
-            localStorage.setItem('password', password);  // Store password to localStorage
-            emailError.textContent = "";
-            alert("Registration Successful!");
+document
+    .getElementById("continue-btn")
+    .addEventListener("click", async function () {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const emailError = document.getElementById("email-error");
+        const emailSuccess = document.getElementById("email-success");
 
-            window.location.href = "signin/signin.html"; // it will edirect to signin page
-        } 
-        else {
-            // If email is invalid, show error message
-            emailError.textContent = "Please enter a valid email address!";
+        emailError.textContent = "";
+        emailSuccess.textContent = "";
+
+        if (name && email && password) {
+            const emailPattern =
+                /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (emailPattern.test(email)) {
+                const userData = {
+                    name: name,
+                    email: email,
+                    password: password,
+                };
+
+                let data = await createUser(userData);
+
+                if (data.status === false) {
+                    emailError.textContent = data.message;
+                    // return;
+                } else {
+                    emailSuccess.textContent = "Registration Successful!";
+                    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+                    window.location.href = "./signin.html";
+                }
+            } else {
+                emailError.textContent = "Please enter a valid email address!";
+            }
+        } else {
+            emailError.textContent = "Please fill all fields.";
         }
-    } else {
-        // Show error if any field is empty
-        emailError.textContent = "Please fill all fields.";
-    }
-});
+    });

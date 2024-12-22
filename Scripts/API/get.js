@@ -13,3 +13,8 @@ export async function getDatabaseData(endpoint) {
         throw error;
     }
 }
+
+export async function getUserByEmail(email) {
+    const users = await getDatabaseData("/users");
+    return users.find((user) => user[1].email === email);
+}
