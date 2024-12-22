@@ -25,7 +25,6 @@ signinBtn.addEventListener("click", async function () {
                 user[1]
             )}; expires=${d.toUTCString()}; path=/`;
 
-            // localStorage.setItem("currentUser", JSON.stringify(user[1]));
             window.location.href = "index.html";
         } else {
             emailError.textContent = "Invalid Credentials. Please try again!";

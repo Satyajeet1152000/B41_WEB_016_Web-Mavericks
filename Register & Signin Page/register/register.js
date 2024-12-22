@@ -20,6 +20,7 @@ document
                     name: name,
                     email: email,
                     password: password,
+                    admin: false,
                 };
 
                 let data = await createUser(userData);

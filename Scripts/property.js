@@ -135,3 +135,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initial display
     displayProperties();
 });
+
+const userCookie = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith("userInfo="));
+
+if (!userCookie) {
+    window.location.href = "signin.html";
+}

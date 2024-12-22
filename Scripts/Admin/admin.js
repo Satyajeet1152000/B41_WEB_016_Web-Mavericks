@@ -188,6 +188,19 @@ async function handleBulkUpload(section) {
     input.click();
 }
 
+const userCookie = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith("userInfo="));
+
+if (!userCookie) {
+    window.location.href = "index.html";
+} else {
+    const userInfo = JSON.parse(decodeURIComponent(userCookie.split("=")[1]));
+    if (!userInfo.admin) {
+        window.location.href = "index.html";
+    }
+}
+
 window.handleAddNewBtn = handleAddNewBtn;
 window.handleEditButton = handleEditButton;
 window.handleDeleteButton = handleDeleteButton;

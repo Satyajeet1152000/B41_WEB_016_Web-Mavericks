@@ -70,11 +70,16 @@ export function ExploreIndiaImageCarasoul(containerId, data) {
     ImageCarasoulGenerator(containerId, cardHtmlData, headingHtml);
 }
 
+const userCookie = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith("userInfo="));
 export function BangalorePropertyImageCarasoul(containerId, data) {
     let cardHtmlData = "";
     data.forEach((d) => {
         cardHtmlData += `
-        <a href="/property.html?type=${d[1].type}" class="swiper-slide">
+        <a href="${
+            userCookie ? `/property.html?type=${d[1].type}` : "/signin.html"
+        }" class="swiper-slide">
             <img
                 src=${d[1].imgSrc}
                 alt=${d[1].location}
