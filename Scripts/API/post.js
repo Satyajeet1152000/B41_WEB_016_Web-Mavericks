@@ -34,7 +34,10 @@ export async function createUser(userData) {
                 (user) => user.email === userData.email
             );
             if (emailExists) {
-                throw new Error("Email already exists");
+                return {
+                    status: false,
+                    message: "Email already exists",
+                };
             }
         }
 
@@ -48,13 +51,11 @@ export async function createUser(userData) {
         });
 
         if (!createResponse.ok) {
-            throw new Error(`HTTP error! status: ${createResponse.status}`);
+            return { status: false, message: "Registration failed" };
         }
 
-        const result = await createResponse.json();
-        return result;
+        return { status: true };
     } catch (error) {
-        console.error("Error creating user:", error);
         throw error;
     }
 }

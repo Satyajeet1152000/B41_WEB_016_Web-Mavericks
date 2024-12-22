@@ -70,7 +70,9 @@ header {
 }
 
 /* Input Fields Styling (Name, Email, and Password) */
-input[type="text"], input[type="email"], input[type="password"] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
     width: 100%;
     padding: 12px;
     margin-bottom: 10px;
@@ -89,11 +91,18 @@ input[type="text"], input[type="email"], input[type="password"] {
     display: block;
 }
 
+#email-success {
+    color: green;
+    font-size: 12px;
+    margin-bottom: 10px;
+    display: block;
+}
+
 /* Continue Button Styling */
 button#continue-btn {
     width: 100%;
     padding: 12px;
-    background-color: #007BFF;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -148,7 +157,7 @@ footer span {
 
 footer a {
     text-decoration: none;
-    color: #007BFF;
+    color: #007bff;
 }
 
 footer a:hover {

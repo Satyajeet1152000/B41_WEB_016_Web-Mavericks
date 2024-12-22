@@ -1,24 +1,37 @@
+// Import the API function
+import { getUserByEmail } from "../../Scripts/API/get.js";
+
 // catch all the elements by id
-const signinBtn=document.getElementById("signin-btn");
-const emailInput=document.getElementById("email");
-const passInput=document.getElementById("password");
-const emailError=document.getElementById("email-error");
+const signinBtn = document.getElementById("signin-btn");
+const emailInput = document.getElementById("email");
+const passInput = document.getElementById("password");
+const emailError = document.getElementById("email-error");
 
 // add event listener for sign in button
-signinBtn.addEventListener("click" , function(){
-    const enteredEmail=emailInput.value;
-    const enteredPass=passInput.value;
-    // store mail and password
-    const storeEmail=localStorage.getItem("email");
-    const storePass=localStorage.getItem("password");
+signinBtn.addEventListener("click", async function () {
+    const enteredEmail = emailInput.value;
+    const enteredPass = passInput.value;
 
-    // check if the mail matches
-    if(enteredEmail===storeEmail && enteredPass===storePass){
-        // then redirect to the main page
-        window.location.href="main.html" //add main page here
+    try {
+        // Get user from database
+        const user = await getUserByEmail(enteredEmail);
+        console.log(user);
+
+        if (user && user[1].password === enteredPass) {
+            // Set cookie with user info that expires in 24 hours
+            const d = new Date();
+            d.setTime(d.getTime() + 24 * 60 * 60 * 1000);
+            document.cookie = `userInfo=${JSON.stringify(
+                user[1]
+            )}; expires=${d.toUTCString()}; path=/`;
+
+            // localStorage.setItem("currentUser", JSON.stringify(user[1]));
+            window.location.href = "index.html";
+        } else {
+            emailError.textContent = "Invalid Credentials. Please try again!";
+        }
+    } catch (error) {
+        console.error("Login error:", error);
+        emailError.textContent = "An error occurred. Please try again later.";
     }
-    else{
-        // show an error
-        emailError.textContent="Invalid Credentials. Please try again!"
-    }
-})
+});

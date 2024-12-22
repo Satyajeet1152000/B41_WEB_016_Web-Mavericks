@@ -9,6 +9,9 @@ document
         const emailError = document.getElementById("email-error");
         const emailSuccess = document.getElementById("email-success");
 
+        emailError.textContent = "";
+        emailSuccess.textContent = "";
+
         if (name && email && password) {
             const emailPattern =
                 /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
@@ -19,24 +22,17 @@ document
                     password: password,
                 };
 
-                try {
-                    console.log(userData);
-                    await createUser(userData);
-                } catch (error) {
-                    if (error.message === "Email already exists") {
-                        emailError.textContent =
-                            "This email is already registered";
-                        return;
-                    }
-                    emailError.textContent =
-                        "Registration failed. Please try again.";
-                    return;
+                let data = await createUser(userData);
+
+                if (data.status === false) {
+                    emailError.textContent = data.message;
+                    // return;
+                } else {
+                    emailSuccess.textContent = "Registration Successful!";
+                    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+                    window.location.href = "./signin.html";
                 }
-
-                emailSuccess.textContent = "Registration Successful!";
-                await new Promise((resolve) => setTimeout(resolve, 1000));
-
-                window.location.href = "./signin.html";
             } else {
                 emailError.textContent = "Please enter a valid email address!";
             }
