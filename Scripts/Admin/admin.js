@@ -82,6 +82,22 @@ function renderTable(section, data) {
                                                 `<td class="border border-gray-300 px-4 py-2">${
                                                     key == "imgSrc"
                                                         ? `<img src=${item[1][key]} alt="" class="w-24"></img>`
+                                                        : key == "facilities"
+                                                        ? Object.entries(
+                                                              item[1][key]
+                                                          )
+                                                              .map(
+                                                                  ([
+                                                                      facility,
+                                                                      value,
+                                                                  ]) =>
+                                                                      `${facility}: ${
+                                                                          value
+                                                                              ? "✓"
+                                                                              : "✗"
+                                                                      }\n`
+                                                              )
+                                                              .join(", ")
                                                         : item[1][key]
                                                 }</td>`
                                         )
@@ -91,7 +107,6 @@ function renderTable(section, data) {
                                             <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded" onclick="handleEditButton('${section}', '${
                                     item[0]
                                 }')">
-
                                                 <i class="ri-pencil-line"></i>
                                             </button>
                                             <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
@@ -101,7 +116,7 @@ function renderTable(section, data) {
                                         </div>
                                     </td>
                                 </tr>
-                                `
+                            `
                         )
                         .join("")}
                 </tbody>

@@ -3,20 +3,14 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>QuickBook</title>
+        <title>QuickBook-Property</title>
         <link href="./output.css" rel="stylesheet" />
         <link href="./Footer.css" rel="stylesheet" />
+
         <link
             href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
             rel="stylesheet"
         />
-
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-        />
-
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     </head>
     <body>
         <div
@@ -49,7 +43,7 @@
         <header
             class="bg-[#003b95] px-2 md:px-20 lg:px-32 xl:px-40 2xl:px-60 text-nowrap py-2"
         >
-            <nav class="space-y-5">
+            <nav class="space-y-5 pb-10">
                 <!-- top -->
                 <div class="flex justify-between items-center">
                     <img
@@ -144,74 +138,241 @@
                     </button>
                 </div>
             </nav>
-
-            <!-- heading -->
-            <div class="text-white space-y-2 my-10 mb-20">
-                <h1 class="text-5xl font-bold">Find your next stay</h1>
-                <p class="text-2xl">
-                    Search low prices on hotels, homes and much more...
-                </p>
-            </div>
         </header>
 
-        <main class="px-2 md:px-20 lg:px-32 xl:px-40 2xl:px-60 space-y-12">
-            <!-- search form-->
-            <div
-                class="p-1 rounded-lg flex flex-col xl:flex-row bg-yellow-500 items-center gap-2 text-xl -mt-10"
-            >
-                <div
-                    class="bg-white h-16 w-full rounded-lg px-2 overflow-hidden flex items-center gap-2"
-                >
-                    <label for="" class="text-gray-400 text-2xl"
-                        ><i class="ri-hotel-bed-line"></i
-                    ></label>
-                    <input
-                        type="text"
-                        class="placeholder:text-black h-full w-full focus:outline-none focus:placeholder:text-gray-400"
-                        placeholder="Where are you going?"
-                    />
+        <!-- Main content -->
+        <main class="px-2 md:px-20 lg:px-32 xl:px-40 2xl:px-60">
+            <div class="container flex gap-10 !p-0 text-nowrap">
+                <div id="filter-container" class="mb-8 space-y-6 min-w-52">
+                    <!-- Property Type Filter -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 flex flex-col">
+                            Property Type
+                        </h3>
+                        <div class="flex flex-col gap-2">
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="property-type"
+                                    value="hotel"
+                                    class="property-type"
+                                />
+                                <span>Hotels</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="property-type"
+                                    value="resorts"
+                                    class="property-type"
+                                />
+                                <span>Resorts</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="property-type"
+                                    value="villas"
+                                    class="property-type"
+                                />
+                                <span>Villas</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="property-type"
+                                    value="homestays"
+                                    class="property-type"
+                                />
+                                <span>Homestays</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="property-type"
+                                    value="guest_houses"
+                                    class="property-type"
+                                />
+                                <span>Guest Houses</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="property-type"
+                                    value="apartments"
+                                    class="property-type"
+                                />
+                                <span>Apartments</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="property-type"
+                                    value="country_houses"
+                                    class="property-type"
+                                />
+                                <span>Country Houses</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="property-type"
+                                    value="holiday_homes"
+                                    class="property-type"
+                                />
+                                <span>Holiday Homes</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="property-type"
+                                    value="campsites"
+                                    class="property-type"
+                                />
+                                <span>Campsites</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="property-type"
+                                    value="cabins"
+                                    class="property-type"
+                                />
+                                <span>Cabins</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Range Filter -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Price Range</h3>
+                        <div class="px-4">
+                            <div class="flex justify-between mb-2">
+                                <span id="price-min">₹0</span>
+                                <span id="price-max">₹25,000</span>
+                            </div>
+                            <input
+                                type="range"
+                                id="price-range"
+                                min="0"
+                                max="25000"
+                                step="500"
+                                class="w-full"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Rating Filter -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Rating</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="rating"
+                                    value="9"
+                                    class="rating-filter"
+                                />
+                                <span>9+ Exceptional</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="rating"
+                                    value="8"
+                                    class="rating-filter"
+                                />
+                                <span>8+ Very Good</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="rating"
+                                    value="7"
+                                    class="rating-filter"
+                                />
+                                <span>7+ Good</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Facilities Filter -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Facilities</h3>
+                        <div class="flex flex-col gap-2">
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="facilities"
+                                    value="parking"
+                                    class="facility-filter"
+                                />
+                                <span>Parking</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="facilities"
+                                    value="restaurant"
+                                    class="facility-filter"
+                                />
+                                <span>Restaurant</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="facilities"
+                                    value="pets_allowed"
+                                    class="facility-filter"
+                                />
+                                <span>Pets Allowed</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Bed Type Filter -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Bed Type</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="bed_type"
+                                    value="double"
+                                    class="bed-filter"
+                                />
+                                <span>Double Bed</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input
+                                    type="checkbox"
+                                    name="bed_type"
+                                    value="twin"
+                                    class="bed-filter"
+                                />
+                                <span>Twin Bed</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-                <div
-                    class="bg-white h-16 w-full rounded-lg px-2 overflow-hidden flex items-center gap-2"
-                >
-                    <label for="" class="text-gray-400 text-2xl"
-                        ><i class="ri-calendar-2-line"></i
-                    ></label>
-                    <input
-                        type="text"
-                        class="placeholder:text-black h-full w-full xl:w-fit focus:outline-none focus:placeholder:text-gray-400"
-                        disabled
-                        placeholder="Fri-20 Dec - Sat 28 Dec"
-                    />
+                <div>
+                    <div class="mb-4">
+                        <p
+                            id="results-count"
+                            class="text-lg text-gray-700 font-medium"
+                        ></p>
+                    </div>
+                    <div id="property-container" class="flex flex-wrap gap-4">
+                        <!-- <div
+                        id="property-container"
+                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6"
+                    > -->
+                        <!-- Properties will be dynamically inserted here -->
+                    </div>
                 </div>
-                <div
-                    class="bg-white h-16 w-full rounded-lg px-2 overflow-hidden flex items-center gap-2"
-                >
-                    <label for="" class="text-gray-400 text-2xl"
-                        ><i class="ri-user-line"></i
-                    ></label>
-                    <input
-                        type="text"
-                        class="placeholder:text-black h-full w-full focus:outline-none focus:placeholder:text-gray-400"
-                        disabled
-                        placeholder="2 adults . 0 childeren . 1 room"
-                    />
-                </div>
-                <button
-                    class="bg-[#0057b8] h-16 w-full xl:w-fit px-5 text-white font-semibold rounded-lg"
-                >
-                    Search
-                </button>
             </div>
-            <div id="offers"></div>
-            <div id="explore-india"></div>
-            <div id="property-banglore"></div>
-            <div id="trending-destination"></div>
-            <div id="quick-and-easy"></div>
-            <div id="deals-of-weekends"></div>
-            <div id="top-uniqie-property"></div>
         </main>
-        <!-- footer code -->
+
         <footer>
             <div class="container">
                 <h1
@@ -595,10 +756,8 @@
                 </div>
             </div>
         </footer>
-        <script type="module" src="./Scripts/config.js"></script>
-        <script type="module" src="./Scripts/index.js"></script>
+        <script type="module" src="./Scripts/property.js"></script>
         <script type="module" src="./Scripts/mobileNav.js"></script>
         <script type="module" src="./Scripts/footer.js"></script>
-        <!-- <script type="module" src="temp.js"></script> -->
     </body>
 </html>

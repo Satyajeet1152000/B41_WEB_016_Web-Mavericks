@@ -74,16 +74,30 @@ export function BangalorePropertyImageCarasoul(containerId, data) {
     let cardHtmlData = "";
     data.forEach((d) => {
         cardHtmlData += `
-        <div class="swiper-slide">
+        <a href="/property.html?type=${d[1].type}" class="swiper-slide">
             <img
                 src=${d[1].imgSrc}
                 alt=${d[1].location}
                  class="w-80 h-80 rounded-lg object-cover"
             />
-            <h3 class="font-bold text-xl">${d[1].types}</h3>
-            <p class="text-gray-500">${d[1].info}</p>
-            <p class="text-gray-500">${d[1].availablity} available</p>
-        </div>
+            <h3 class="font-bold text-xl capitalize">${
+                d[1].type.charAt(0).toUpperCase() + d[1].type.slice(1)
+            }</h3>
+            <p class="text-gray-500">${new Date().toLocaleDateString("en-US", {
+                day: "numeric",
+                month: "short",
+            })} - ${new Date(
+            Date.now() +
+                (2 + Math.floor(Math.random() * 6)) * 24 * 60 * 60 * 1000
+        ).toLocaleDateString("en-US", {
+            day: "numeric",
+            month: "short",
+        })}, 2 adults</p>
+
+            <p class="text-gray-500">${
+                Math.floor(Math.random() * 1991) + 10
+            } available</p>
+        </a>
         `;
     });
 
