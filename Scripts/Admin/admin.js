@@ -1,9 +1,9 @@
 import activeBtnController from "../activeButtonController.js";
 import { deleteDatabaseData } from "../API/delete.js";
 import { getDatabaseData } from "../API/get.js";
+import { postDatabaseData } from "../API/post.js";
 
 const contentContainer = document.getElementById("content-container");
-let currentSection = null;
 let currentData = [];
 
 const tabButtonsContainer = document.getElementById("tab-buttons-container");
@@ -47,7 +47,12 @@ function renderTable(section, data) {
                     <h2 class="text-2xl font-bold">${sectionsData[
                         section
                     ].toUpperCase()}</h2>
-                    <button class="bg-green-500 text-white px-4 py-2 rounded" onclick="handleAddNewBtn('${section}')">Add New</button>
+                    <div class="space-x-2">
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded" onclick="handleBulkUpload('${section}')">
+                            <i class="ri-upload-2-line"></i> Bulk Upload
+                        </button>
+                        <button class="bg-green-500 text-white px-4 py-2 rounded" onclick="handleAddNewBtn('${section}')">Add New</button>
+                    </div>
                 </div>`;
     if (data.length === 0) {
         html += `<p class="text-center text-gray-600">No data available.</p>`;
@@ -126,7 +131,50 @@ async function handleDeleteButton(section, id) {
         }
     }
 }
+
+async function handleBulkUpload(section) {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = ".json";
+
+    input.onchange = async (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            try {
+                const reader = new FileReader();
+                reader.onload = async (event) => {
+                    try {
+                        const jsonData = JSON.parse(event.target.result);
+
+                        if (!Array.isArray(jsonData)) {
+                            throw new Error(
+                                "Uploaded file must contain an array of items"
+                            );
+                        }
+
+                        const uploadPromises = jsonData.map((item) =>
+                            postDatabaseData(section, item)
+                        );
+
+                        await Promise.all(uploadPromises);
+                        await loadSectionData(section);
+                        alert("Bulk upload completed successfully!");
+                    } catch (error) {
+                        alert("Error processing JSON file: " + error.message);
+                    }
+                };
+                reader.readAsText(file);
+            } catch (error) {
+                alert("Error reading file: " + error.message);
+            }
+        }
+    };
+
+    input.click();
+}
+
 window.handleAddNewBtn = handleAddNewBtn;
 window.handleEditButton = handleEditButton;
 window.handleDeleteButton = handleDeleteButton;
 window.loadSectionData = loadSectionData;
+window.handleBulkUpload = handleBulkUpload;
