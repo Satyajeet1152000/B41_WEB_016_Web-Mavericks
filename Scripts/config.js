@@ -4,7 +4,7 @@ window.apiBaseUrl =
 window.sectionsData = {
     offers: "Offers",
     explore: "Explore",
-    properties: "Properties",
+    propertiesData: "Properties",
     trendingDestinations: "Trending Destinations",
     quickAndEasyTrip: "Quick & Easy Trip",
     dealsOfWeekend: "Deals Of Weekend",

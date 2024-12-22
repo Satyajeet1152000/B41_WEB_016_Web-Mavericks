@@ -17,8 +17,9 @@ import {
     );
     BangalorePropertyImageCarasoul(
         "property-banglore",
-        await getDatabaseData("properties")
+        await getDatabaseData("propertiesTypes")
     );
+
     TrendingDestinations(
         "trending-destination",
         await getDatabaseData("trendingDestinations")
